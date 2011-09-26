@@ -3,5 +3,6 @@ describe 'findWord', ->
     @wm = window.WordMaestro
 
   it 'should find a matching word', ->
-   expect(@wm.findWord('elefant')).toBe 'elefant'
+    console.log @wm
+    expect(@wm.findWord('elefant')).toBe 'elefant'
 

@@ -1,6 +1,9 @@
-$ ->
-  findWord (pattern) ->
+WordMaestro = 
+
+  findWord: (pattern) ->
+    console.log pattern
+    pattern
 
 
-  window.WordMaestro = this
+window.WordMaestro = WordMaestro
 
