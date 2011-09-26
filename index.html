@@ -2,17 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Word Meastro</title>
-    <link type="text/css" href="css/dot-luv/jquery-ui-1.8.16.custom.css" rel="stylesheet" />  
+    <title>Word Maestro</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.0b3.min.css">
   </head>
 
-  <body>
-    <div id="container">
-      <input id='pattern'>
-      <ul id='matching-words'>
-      </ul>
+  <body class='ui-mobile-viewport'>
+    <div id="search-form" data-role='page'>
+      <div data-role="header">
+        <h1>Word Maestro</h1>
+      </div>
+      <div data-role="content" id="one">
+        <input id='pattern'>
+        <ol id='matching-words' data-role='list-view' data-theme="g" >
+        </ol>
+      </div>
+      <div data-role="footer">
+        <em>Created by Anders Janmyr</em>
+      </div>
     </div>
     <script src="lib/jquery-1.6.3.js"></script>
+    <script src="lib/jquery.mobile-1.0b3.min.js"></script>
     <script type="text/javascript" src="data/swedish-word-list.txt"></script>
     <script src="lib/word-maestro.js"></script>
     <script src="lib/main.js"></script>
