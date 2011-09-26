@@ -3,22 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Word Meastro</title>
-    <link rel="stylesheet" href="css/main.css">
-
-
-    <script type="text/template" id="animal-template">
-      <h1><%= kind %></h1>
-      <h2><%= name %></h2>
-      <img src='<%= image %>'/>
-    </script>
-
+    <link type="text/css" href="css/dot-luv/jquery-ui-1.8.16.custom.css" rel="stylesheet" />  
   </head>
 
   <body>
     <div id="container">
+      <input id='pattern'>
+      <ul id='matching-words'>
+      </ul>
     </div>
     <script src="lib/jquery-1.6.3.js"></script>
-    <script type="text/javascript" src="data/swedish-word-list.js"></script>
+    <script type="text/javascript" src="data/swedish-word-list.txt"></script>
     <script src="lib/word-maestro.js"></script>
     <script src="lib/main.js"></script>
   </body>
