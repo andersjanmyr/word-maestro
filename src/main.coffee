@@ -1,0 +1,5 @@
+$ ->
+
+  wm = WordMaestro
+
+
