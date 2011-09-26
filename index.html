@@ -11,9 +11,12 @@
       <div data-role="header">
         <h1>Word Maestro</h1>
       </div>
-      <div data-role="content" id="one">
-        <input id='pattern'>
-        <ol id='matching-words' data-role='list-view' data-theme="g" >
+      <div data-role="content">
+        <div data-role="fieldcontain">
+          <label for="pattern">Pattern:</label>
+          <input id="pattern" type='search'/>
+        </div>
+        <ol id='matching-words' data-role='listview' data-theme="g" >
         </ol>
       </div>
       <div data-role="footer">
