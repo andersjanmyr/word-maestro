@@ -22,12 +22,14 @@ describe 'WordMaestro', ->
       expect(@wm.findPermutedWord('xat')).toEqual ['tax']
 
     it 'should return [tax] for xat.', ->
-      expect(@wm.findPermutedWord('xat.')).toEqual(
-        ['axet', 'taxa', 'taxi', 'taxa', 'exat', 'yxat'])
+      expect(@wm.findPermutedWord('xat.').length).toBe 5
 
-    it 'should return many words for kal.on', ->
-      expect(@wm.findPermutedWord('kal.on').length).toBe 17
+    it 'should return many words for ka.o', ->
+      expect(@wm.findPermutedWord('ka.o').length).toBe 19
     
+  describe 'binarySearch', ->
+    it 'should return a number for rederi', ->
+      expect(@wm.binarySearch(WORDS, 'rederi')).toBeGreaterThan -1
 
 
 

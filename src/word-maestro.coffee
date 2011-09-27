@@ -41,12 +41,14 @@ WordMaestro =
       @unique(@flatten wordss)
     else
       words = (perm for perm in permutations when @binarySearch(WORDS, perm) > 0)
+      console.log 'done'
+      @unique(words)
 
   binarySearch: (items, value) ->
     start = 0
     stop  = items.length - 1
     pivot = Math.floor (start + stop) / 2
-
+    
     while items[pivot] isnt value and start < stop
       stop  = pivot - 1 if value < items[pivot]
       start = pivot + 1 if value > items[pivot]
