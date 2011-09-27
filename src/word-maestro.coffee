@@ -45,6 +45,7 @@ WordMaestro =
       @unique(words)
 
   binarySearch: (items, value) ->
+    value = value.toLowerCase()
     start = 0
     stop  = items.length - 1
     pivot = Math.floor (start + stop) / 2
