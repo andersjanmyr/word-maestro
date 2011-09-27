@@ -22,6 +22,38 @@ WordMaestro =
         usedChars.pop()
     permute word
     permArr
+  
+  flatten: (wordss) ->
+    [].concat.apply([], wordss)
+  
+  unique: (list) ->
+    output = {}
+    len = list.length
+    output[list[key]] = list[key] for key in [0...len]
+    value for key, value of output
+
+  findPermutedWord: (word) ->
+    permutations = @unique(@permuteWord word)
+    console.log permutations.length
+    if '.' in word
+      wordss = (@findWord("^#{perm}$") for perm in permutations)
+      console.log 'done'
+      @unique(@flatten wordss)
+    else
+      words = (perm for perm in permutations when @binarySearch(WORDS, perm) > 0)
+
+  binarySearch: (items, value) ->
+    start = 0
+    stop  = items.length - 1
+    pivot = Math.floor (start + stop) / 2
+
+    while items[pivot] isnt value and start < stop
+      stop  = pivot - 1 if value < items[pivot]
+      start = pivot + 1 if value > items[pivot]
+
+      pivot = Math.floor (stop + start) / 2
+
+    if items[pivot] is value then pivot else -1
 
 window.WordMaestro = WordMaestro
 

@@ -17,5 +17,18 @@ describe 'WordMaestro', ->
     it 'should return [abc... cba]', ->
       expect(@wm.permuteWord('abc').length).toBe 6
 
+  describe 'findPermutedWord', ->
+    it 'should return [tax] for xat', ->
+      expect(@wm.findPermutedWord('xat')).toEqual ['tax']
+
+    it 'should return [tax] for xat.', ->
+      expect(@wm.findPermutedWord('xat.')).toEqual(
+        ['axet', 'taxa', 'taxi', 'taxa', 'exat', 'yxat'])
+
+    it 'should return many words for kal.on', ->
+      expect(@wm.findPermutedWord('kal.on').length).toBe 17
+    
+
+
 
 
