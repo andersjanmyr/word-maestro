@@ -25,7 +25,7 @@ describe 'WordMaestro', ->
       expect(@wm.findPermutedWord('xat.').length).toBe 5
 
     it 'should return many words for ka.o', ->
-      expect(@wm.findPermutedWord('ka.o').length).toBe 19
+      expect(@wm.findPermutedWord('ka.o').length).toBe 18
     
   describe 'binarySearch', ->
     it 'should return a number for rederi', ->
