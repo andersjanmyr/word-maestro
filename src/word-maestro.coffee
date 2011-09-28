@@ -5,6 +5,29 @@ WordMaestro =
     $.grep WORDS, (word) ->
       regex.test word
 
+  expandPattern: (pattern) ->
+    words = []
+    alfabet = 'abcdefghijklmnopqrstuvwxyzåäö'
+    expand = (pattern) ->
+      if pattern.indexOf('.') is -1
+        words.push pattern
+        return
+
+      chars = pattern.split('')
+      len = chars.length
+      for i in [0...len]
+        if chars[i] is '.'
+          for j in [0...29]
+            chars.splice(i, 1, alfabet[j])
+            newPattern = chars.join('')
+            console.log 'new', newPattern
+            expand(newPattern)
+    expand(pattern)
+    @unique(words)
+
+        
+
+
   permuteWord: (word) ->
     permArr = []
     usedChars = []

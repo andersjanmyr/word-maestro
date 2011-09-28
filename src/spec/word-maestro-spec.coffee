@@ -31,6 +31,10 @@ describe 'WordMaestro', ->
     it 'should return a number for rederi', ->
       expect(@wm.binarySearch(WORDS, 'rederi')).toBeGreaterThan -1
 
+  describe 'expandPattern', ->
+    it 'should return an array with length 29 for one .', ->
+      expect(@wm.expandPattern('a.').length).toBe 29
 
-
+    it 'should return an array with length 29*29 for one .', ->
+      expect(@wm.expandPattern('.a.').length).toBe 29*29
 
