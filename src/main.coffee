@@ -6,7 +6,7 @@ $ ->
     pattern = $('#pattern').val()
 
     if $('#scrambled').is(':checked')
-      matching_words = wm.findPermutedWord pattern
+      matching_words = wm.findPermutedAndShortendWord pattern
     else
       matching_words = wm.findWord "^#{pattern}$"
     matching_words = matching_words[0...10] if matching_words.length > 10
