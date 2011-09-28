@@ -38,3 +38,11 @@ describe 'WordMaestro', ->
     it 'should return an array with length 29*29 for one .', ->
       expect(@wm.expandPattern('.a.').length).toBe 29*29
 
+  describe 'shortenWord', ->
+    it 'should return [ab, ba, a b] for ab', ->
+      expect(@wm.shortenWord('ab')).toEqual ['ab', 'b', 'a']
+
+    it 'should return an array with length 6 for abc', ->
+      expect(@wm.shortenWord('abc').length).toBe 7
+
+

@@ -76,6 +76,19 @@ WordMaestro =
     permute word
     permArr
   
-
+  shortenWord: (word) ->
+    words = []
+    shorten = (word) ->
+      return if word is ''
+      words.push word
+      chars = word.split('')
+      len = chars.length
+      for i in [0...len]
+        ch = chars.splice(i, 1)
+        shorten(chars.join(''))
+        chars.splice(i, 0, ch)
+    shorten word
+    @unique(words)
+    
 window.WordMaestro = WordMaestro
 
