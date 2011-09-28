@@ -92,9 +92,11 @@ WordMaestro =
    
   findPermutedAndShortendWord: (word) ->
     shorts = @shortenWord word
-    wordss = (@findPermutedWord(short) for short in shorts)
-    console.log wordss
-    @unique(@flatten(wordss))
+    words = []
+    for short in shorts
+      words = words.concat(@findPermutedWord(short))
+      if words.length > 10 then break;
+    @unique(words)
     
 window.WordMaestro = WordMaestro
 
