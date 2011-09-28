@@ -89,6 +89,12 @@ WordMaestro =
         chars.splice(i, 0, ch)
     shorten word
     @unique(words)
+   
+  findPermutedAndShortendWord: (word) ->
+    shorts = @shortenWord word
+    wordss = (@findPermutedWord(short) for short in shorts)
+    console.log wordss
+    @unique(@flatten(wordss))
     
 window.WordMaestro = WordMaestro
 

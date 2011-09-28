@@ -45,4 +45,9 @@ describe 'WordMaestro', ->
     it 'should return an array with length 6 for abc', ->
       expect(@wm.shortenWord('abc').length).toBe 7
 
+  describe 'findPermutedAndShortendWord', ->
+    it 'should return an [ax, tax] for xat', ->
+      expect(@wm.findPermutedAndShortendWord('xat')).toEqual ['tax', 'ta', 'ax']
+
+
 
