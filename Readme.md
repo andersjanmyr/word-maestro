@@ -7,4 +7,5 @@ Mobile.
 ## Todo
 
 * Enter key event to search
+* Add a working icon, when searching takes long
 
