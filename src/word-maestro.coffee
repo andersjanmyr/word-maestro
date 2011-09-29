@@ -88,7 +88,8 @@ WordMaestro =
         shorten(chars.join(''))
         chars.splice(i, 0, ch)
     shorten word
-    @unique(words)
+    @unique(words).sort (a, b) -> 
+      b.length - a.length
    
   findPermutedAndShortendWord: (word) ->
     shorts = @shortenWord word
