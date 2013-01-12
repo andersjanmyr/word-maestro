@@ -53,9 +53,7 @@ WordMaestro =
 
   findPermutedWord: (word) ->
     permutations = @unique(@permuteWord word)
-    console.log permutations.length
     wordss = (@findWord(perm) for perm in permutations)
-    console.log 'done'
     @unique(@flatten wordss)
 
   permuteWord: (word) ->
