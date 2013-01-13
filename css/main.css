@@ -1,3 +1,11 @@
 li.ui-li {
   font-size: large;
 }
+
+#spinner {
+    display: none;
+    position: absolute;
+    left: 100px;
+    height: 24px;
+    margin-left: 100px;
+}

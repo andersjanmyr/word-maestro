@@ -1,4 +1,4 @@
-WordMaestro = 
+WordMaestro =
 
   findWord: (pattern) ->
     words = @expandPattern(pattern)
@@ -37,7 +37,7 @@ WordMaestro =
     start = 0
     stop  = items.length - 1
     pivot = Math.floor (start + stop) / 2
-    
+
     while items[pivot] isnt value and start < stop
       stop  = pivot - 1 if value < items[pivot]
       start = pivot + 1 if value > items[pivot]
@@ -73,7 +73,7 @@ WordMaestro =
         usedChars.pop()
     permute word
     permArr
-  
+
   shortenWord: (word) ->
     words = []
     shorten = (word) ->
@@ -86,9 +86,9 @@ WordMaestro =
         shorten(chars.join(''))
         chars.splice(i, 0, ch)
     shorten word
-    @unique(words).sort (a, b) -> 
+    @unique(words).sort (a, b) ->
       b.length - a.length
-   
+
   findPermutedAndShortendWord: (word) ->
     shorts = @shortenWord word
     words = []
@@ -96,6 +96,6 @@ WordMaestro =
       words = words.concat(@findPermutedWord(short))
       if words.length > 10 then break;
     @unique(words)
-    
+
 window.WordMaestro = WordMaestro
 
