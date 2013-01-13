@@ -74,10 +74,10 @@ WordMaestro =
     permute word
     permArr
 
-  shortenWord: (word) ->
+  shortenWord: (originalWord) ->
     words = []
     shorten = (word) ->
-      return if word is ''
+      return if word.length < 3
       words.push word
       chars = word.split('')
       len = chars.length
@@ -85,7 +85,7 @@ WordMaestro =
         ch = chars.splice(i, 1)
         shorten(chars.join(''))
         chars.splice(i, 0, ch)
-    shorten word
+    shorten originalWord
     @unique(words).sort (a, b) ->
       b.length - a.length
 
@@ -94,7 +94,7 @@ WordMaestro =
     words = []
     for short in shorts
       words = words.concat(@findPermutedWord(short))
-      if words.length > 10 then break;
+      if words.length > 10 then break
     @unique(words)
 
 window.WordMaestro = WordMaestro
