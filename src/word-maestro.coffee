@@ -1,4 +1,4 @@
-WordMaestro =
+@WordMaestro =
 
   findWord: (pattern) ->
     words = @expandPattern(pattern)
@@ -97,5 +97,4 @@ WordMaestro =
       if words.length > 10 then break
     @unique(words)
 
-window.WordMaestro = WordMaestro
 
