@@ -2,6 +2,12 @@ li.ui-li {
   font-size: large;
 }
 
+#pattern {
+    font-family: "Andale Mono" monospace;
+    font-weight: bold;
+    font-size: 18px;
+}
+
 #spinner {
     display: none;
     position: absolute;
