@@ -14,15 +14,16 @@ $ ->
     false)
 
   $('#pattern').change ->
-    $('#spinner').show()
     pattern = $('#pattern').val()
 
     if $('#scrambled').is(':checked')
       if pattern.length > 8
-        matching_words = ['Inte mer än 8 tecken med blandad sökning!']
+        showMatches(['Inte mer än 8 tecken med blandad sökning!'])
       else
+        $('#spinner').show()
         return worker.postMessage({ cmd: 'findPermutedAndShortendWord', pattern:  pattern })
     else
+      $('#spinner').show()
       worker.postMessage({ cmd: 'findWord', pattern:  pattern })
 
 
