@@ -22,7 +22,7 @@ $ ->
 
 
   $('#pattern').change ->
-    pattern = $('#pattern').val()
+    pattern = $('#pattern').val().toLowerCase()
 
     if $('#scrambled').is(':checked')
       if pattern.length > 8
