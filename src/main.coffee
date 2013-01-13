@@ -1,9 +1,12 @@
 $ ->
 
+  capitalize = (word) ->
+    return word.charAt(0).toUpperCase() + word.slice(1)
+
   showMatches = (matchingWords) ->
     matchingWords = matchingWords[0...10] if matchingWords.length > 10
     matchingWords = ['Inga träffar!'] if matchingWords.length is 0
-    html = ("<li>#{word}</li>" for word in matchingWords).join('\n')
+    html = ("<li>#{capitalize(word)}</li>" for word in matchingWords).join('\n')
     $('#matching-words').empty().html(html).listview('refresh')
 
   worker = new Worker('lib/worker.js')
