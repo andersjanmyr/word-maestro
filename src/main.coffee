@@ -1,5 +1,12 @@
 $ ->
 
+  worker = new Worker('lib/worker.js')
+  worker.addEventListener('message', (e) ->
+    console.log(e.data)
+    showMatches(e.data.matchingWords)
+    $.mobile.hidePageLoadingMsg()
+    false)
+
   capitalize = (word) ->
     return word.charAt(0).toUpperCase() + word.slice(1)
 
@@ -9,12 +16,10 @@ $ ->
     html = ("<li>#{capitalize(word)}</li>" for word in matchingWords).join('\n')
     $('#matching-words').empty().html(html).listview('refresh')
 
-  worker = new Worker('lib/worker.js')
-  worker.addEventListener('message', (e) ->
-    console.log(e.data)
-    showMatches(e.data.matchingWords)
-    $('#spinner').hide()
-    false)
+  postMessage = (cmd, pattern) ->
+    $.mobile.showPageLoadingMsg()
+    worker.postMessage({ cmd: 'findPermutedAndShortendWord', pattern:  pattern })
+
 
   $('#pattern').change ->
     pattern = $('#pattern').val()
@@ -23,10 +28,8 @@ $ ->
       if pattern.length > 8
         showMatches(['Inte mer än 8 tecken med blandad sökning!'])
       else
-        $('#spinner').show()
-        return worker.postMessage({ cmd: 'findPermutedAndShortendWord', pattern:  pattern })
+        postMessage('findPermutedAndShortendWord', pattern)
     else
-      $('#spinner').show()
-      worker.postMessage({ cmd: 'findWord', pattern:  pattern })
+      postMessage('findWord', pattern)
 
 
