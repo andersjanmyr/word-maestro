@@ -36,7 +36,6 @@ describe 'WordMaestro', ->
 
     it 'should return an array with length 29*29 for ?a?', ->
       expect(@wm.expandPattern('?a?').length).toBe 29*29
-      console.log(@wm.expandPattern('?a?'))
 
   describe 'shortenWord', ->
     it 'should return [ab, ba, a b] for ab', ->
@@ -49,5 +48,8 @@ describe 'WordMaestro', ->
     it 'should return an [ax, tax] for xat', ->
       expect(@wm.findPermutedAndShortendWord('xat')).toEqual ['tax', 'ta', 'ax']
 
+  describe 'findPermutedAndShortendWordSlow', ->
+    it 'should return an [] for andersek', ->
+      expect(@wm.findPermutedAndShortendWord('andersek').length).toEqual 13
 
 
