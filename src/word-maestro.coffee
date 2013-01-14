@@ -1,5 +1,6 @@
 class @WordMaestro
-  constructor: (@words, @alfabet) ->
+  constructor: (@words, @alfabet, alfavalues) ->
+    @alfavalues = (parseInt(c) for c in alfavalues)
 
   findWord: (pattern) ->
     words = @expandPattern(pattern)
@@ -89,8 +90,17 @@ class @WordMaestro
         shorten(chars.join(''))
         chars.splice(i, 0, ch)
     shorten originalWord
-    @unique(words).sort (a, b) ->
-      b.length - a.length
+    @unique(words).sort @sortByValue
+
+  sortByValue: (a, b) =>
+    @calcWordValue(b) - @calcWordValue(a)
+
+  calcWordValue: (word) ->
+    ack  = 0
+    for i in [0...word.length]
+      val = @alfavalues[@alfabet.indexOf(word[i])]
+      ack += val
+    ack
 
   findPermutedAndShortendWord: (word) ->
     shorts = @shortenWord word
@@ -98,6 +108,6 @@ class @WordMaestro
     for short in shorts
       words = words.concat(@findPermutedWord(short))
       if words.length > 10 then break
-    @unique(words)
+    "#{w} (#{@calcWordValue(w)})" for w in @unique(words)
 
 

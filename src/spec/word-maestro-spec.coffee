@@ -1,6 +1,9 @@
 describe 'WordMaestro', ->
   beforeEach ->
-    @wm = new WordMaestro(WORDS, 'abcdefghijklmnopqrstuvwxyzåää')
+    @wm = new WordMaestro(WORDS,
+        'abcdefghijklmnoprstuvxyzåää',
+        '138113231732312411143878444',
+    )
 
   describe 'findWord', ->
     it 'should find a matching word', ->
@@ -23,19 +26,19 @@ describe 'WordMaestro', ->
     it 'should return an array with length 5 for xat?', ->
       expect(@wm.findPermutedWord('xat?').length).toBe 5
 
-    it 'should return 19 words for ka?o', ->
-      expect(@wm.findPermutedWord('ka?o').length).toBe 19
+    it 'should return 18 words for ka?o', ->
+      expect(@wm.findPermutedWord('ka?o').length).toBe 18
     
   describe 'binarySearch', ->
     it 'should return a number for rederi', ->
       expect(@wm.binarySearch(WORDS, 'rederi')).toBeGreaterThan -1
 
   describe 'expandPattern', ->
-    it 'should return an array with length 29 for one a?', ->
-      expect(@wm.expandPattern('a?').length).toBe 29
+    it 'should return an array with length 27 for one a?', ->
+      expect(@wm.expandPattern('a?').length).toBe 27
 
-    it 'should return an array with length 29*29 for ?a?', ->
-      expect(@wm.expandPattern('?a?').length).toBe 29*29
+    it 'should return an array with length 27*27 for ?a?', ->
+      expect(@wm.expandPattern('?a?').length).toBe 27*27
 
   describe 'shortenWord', ->
     it 'should return [ab, ba, a b] for ab', ->
@@ -45,11 +48,14 @@ describe 'WordMaestro', ->
       expect(@wm.shortenWord('abc').length).toBe 7
 
   describe 'findPermutedAndShortendWord', ->
-    it 'should return an [ax, tax] for xat', ->
-      expect(@wm.findPermutedAndShortendWord('xat')).toEqual ['tax', 'ta', 'ax']
+    it 'should return [tax, ax, ta] for xat', ->
+      expect(@wm.findPermutedAndShortendWord('xat')).toEqual ['tax', 'ax', 'ta']
 
   describe 'findPermutedAndShortendWordSlow', ->
-    it 'should return an [] for andersek', ->
-      expect(@wm.findPermutedAndShortendWord('andersek').length).toEqual 13
+    it 'should return ten words  for andersek', ->
+      expect(@wm.findPermutedAndShortendWord('andersek').length).toEqual 10
 
+  describe 'calcWordValue', ->
+    it 'should return 12 for zoo', ->
+      expect(@wm.calcWordValue('zoo')).toEqual 12
 
