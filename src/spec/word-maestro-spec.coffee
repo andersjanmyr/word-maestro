@@ -1,6 +1,6 @@
 describe 'WordMaestro', ->
   beforeEach ->
-    @wm = window.WordMaestro
+    @wm = new WordMaestro(WORDS, 'abcdefghijklmnopqrstuvwxyzåää')
 
   describe 'findWord', ->
     it 'should find a matching word', ->

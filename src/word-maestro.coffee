@@ -1,13 +1,15 @@
-@WordMaestro =
+class @WordMaestro
+  constructor: (@words, @alfabet) ->
 
   findWord: (pattern) ->
     words = @expandPattern(pattern)
-    found = (word for word in words when @binarySearch(WORDS, word) > 0)
+    found = (word for word in words when @binarySearch(@words, word) > 0)
     found
 
   expandPattern: (pattern) ->
     words = []
-    alfabet = 'abcdefghijklmnopqrstuvwxyzåäö'
+    alfabet = @alfabet
+    alfalen = @alfabet.length
     expand = (pattern) ->
       if pattern.indexOf('?') is -1
         words.push pattern
@@ -17,7 +19,7 @@
       len = chars.length
       for i in [0...len]
         if chars[i] is '?'
-          for j in [0...29]
+          for j in [0...alfalen]
             chars.splice(i, 1, alfabet[j])
             newPattern = chars.join('')
             expand(newPattern)

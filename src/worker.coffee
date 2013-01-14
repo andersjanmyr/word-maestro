@@ -1,6 +1,6 @@
 importScripts('../data/swedish-word-list.js', 'word-maestro.js')
 
-wm = @WordMaestro
+wm = new @WordMaestro(WORDS, 'abcdefghijklmnopqrstuvwxyzåää')
 messageHandler = (e) ->
   matchingWords = []
   if e.data.cmd is 'findPermutedAndShortendWord'
