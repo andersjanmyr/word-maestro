@@ -2,10 +2,8 @@ $ ->
 
   worker = new Worker('lib/worker.js')
   worker.addEventListener('message', (e) ->
-    console.log(e.data)
     showMatches(e.data.matchingWords)
-    $.mobile.hidePageLoadingMsg()
-    false)
+    $.mobile.hidePageLoadingMsg())
 
   capitalize = (word) ->
     return word.charAt(0).toUpperCase() + word.slice(1)
@@ -18,10 +16,9 @@ $ ->
 
   postMessage = (cmd, pattern) ->
     $.mobile.showPageLoadingMsg()
-    worker.postMessage({ cmd: 'findPermutedAndShortendWord', pattern:  pattern })
+    worker.postMessage({ cmd: cmd, pattern:  pattern })
 
-
-  $('#pattern').change ->
+  search = ->
     pattern = $('#pattern').val().toLowerCase()
 
     if $('#scrambled').is(':checked')
@@ -32,4 +29,8 @@ $ ->
     else
       postMessage('findWord', pattern)
 
+
+  $('#pattern').change search
+
+  $('#scrambled').click search
 
