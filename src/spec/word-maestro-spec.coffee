@@ -7,7 +7,6 @@ describe 'WordMaestro', ->
       expect(@wm.findWord('elefanternas')).toEqual ['elefanternas']
 
     it 'should find matching words by regexp', ->
-      console.log @wm
       expect(@wm.findWord('ele?anternas')).toEqual ['elefanternas', 'eleganternas']
 
   describe 'permuteWord', ->
@@ -24,8 +23,8 @@ describe 'WordMaestro', ->
     it 'should return an array with length 5 for xat?', ->
       expect(@wm.findPermutedWord('xat?').length).toBe 5
 
-    it 'should return 18 words for ka?o', ->
-      expect(@wm.findPermutedWord('ka?o').length).toBe 18
+    it 'should return 19 words for ka?o', ->
+      expect(@wm.findPermutedWord('ka?o').length).toBe 19
     
   describe 'binarySearch', ->
     it 'should return a number for rederi', ->
@@ -37,6 +36,7 @@ describe 'WordMaestro', ->
 
     it 'should return an array with length 29*29 for ?a?', ->
       expect(@wm.expandPattern('?a?').length).toBe 29*29
+      console.log(@wm.expandPattern('?a?'))
 
   describe 'shortenWord', ->
     it 'should return [ab, ba, a b] for ab', ->

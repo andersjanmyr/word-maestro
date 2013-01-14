@@ -77,7 +77,7 @@
   shortenWord: (originalWord) ->
     words = []
     shorten = (word) ->
-      return if word.length < 3
+      return if word is ''
       words.push word
       chars = word.split('')
       len = chars.length
