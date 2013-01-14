@@ -26,6 +26,7 @@
 
 
   unique: (list) ->
+    return list if list.length < 2
     output = {}
     len = list.length
     output[list[key]] = list[key] for key in [0...len]
