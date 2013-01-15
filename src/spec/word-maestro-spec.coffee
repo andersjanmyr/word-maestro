@@ -1,14 +1,15 @@
 describe 'WordMaestro', ->
   beforeEach ->
     @wm = new WordMaestro(WORDS,
-        'abcdefghijklmnoprstuvxyzåää',
+        'abcdefghijklmnoprstuvxyzåäö',
         '138113231732312411143878444',
     )
 
   describe 'findWord', ->
     it 'should find a matching word', ->
       expect(@wm.findWord('elefanternas')).toEqual ['elefanternas']
-
+    it 'should find a matching word with ö', ->
+      expect(@wm.findWord('ödla')).toEqual ['ödla']
     it 'should find matching words by regexp', ->
       expect(@wm.findWord('ele?anternas')).toEqual ['elefanternas', 'eleganternas']
 
@@ -54,6 +55,10 @@ describe 'WordMaestro', ->
   describe 'findPermutedAndShortendWordSlow', ->
     it 'should return ten words  for andersek', ->
       expect(@wm.findPermutedAndShortendWord('andersek').length).toEqual 10
+
+  describe 'findPermutedAndShortendWordö', ->
+    it 'should return ten words  for ödla', ->
+      expect(@wm.findPermutedAndShortendWord('ödla').length).toEqual 8
 
   describe 'calcWordValue', ->
     it 'should return 12 for zoo', ->
