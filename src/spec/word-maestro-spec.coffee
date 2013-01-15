@@ -48,8 +48,8 @@ describe 'WordMaestro', ->
       expect(@wm.shortenWord('abc').length).toBe 7
 
   describe 'findPermutedAndShortendWord', ->
-    it 'should return [tax, ax, ta] for xat', ->
-      expect(@wm.findPermutedAndShortendWord('xat')).toEqual ['tax', 'ax', 'ta']
+    it 'should return [tax (10), ax (9), ta (2)] for xat', ->
+      expect(@wm.findPermutedAndShortendWord('xat')).toEqual ['tax (10)', 'ax (9)', 'ta (2)']
 
   describe 'findPermutedAndShortendWordSlow', ->
     it 'should return ten words  for andersek', ->

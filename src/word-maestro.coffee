@@ -90,10 +90,15 @@ class @WordMaestro
         shorten(chars.join(''))
         chars.splice(i, 0, ch)
     shorten originalWord
-    @unique(words).sort @sortByValue
+    @sort @unique(words)
 
-  sortByValue: (a, b) =>
-    @calcWordValue(b) - @calcWordValue(a)
+  sort: (words) ->
+    pairs = @calcWordValuePairs(@unique(words))
+    pairs.sort @sortByValue
+    p[0] for p in pairs
+
+  calcWordValuePairs: (words) ->
+    [w, @calcWordValue(w)] for w in words
 
   calcWordValue: (word) ->
     ack  = 0
@@ -101,6 +106,10 @@ class @WordMaestro
       val = @alfavalues[@alfabet.indexOf(word[i])]
       ack += val
     ack
+
+  sortByValue: (a, b) =>
+    b[1] - a[1]
+
 
   findPermutedAndShortendWord: (word) ->
     shorts = @shortenWord word
