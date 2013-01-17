@@ -1,7 +1,7 @@
 importScripts('../data/swedish-word-list.js', 'word-maestro.js')
 
 wm = new @WordMaestro(WORDS,
-    'abcdefghijklmnoprstuvxyzåää',
+    'abcdefghijklmnoprstuvxyzåäö',
     '138113231732312411143878444',
 )
 messageHandler = (e) ->

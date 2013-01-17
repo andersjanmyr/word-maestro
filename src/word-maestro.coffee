@@ -3,9 +3,18 @@ class @WordMaestro
     @alfavalues = (parseInt(c) for c in alfavalues)
 
   findWord: (pattern) ->
+    return @grepWord(pattern) if @threeOrMoreWildcards
     words = @expandPattern(pattern)
     found = (word for word in words when @binarySearch(@words, word) > 0)
     found
+
+  grepWord: (pattern) ->
+    regex = new RegExp "^#{pattern}$".replace(/\?/g, '.')
+    @words.filter (w) ->
+      regex.test(w)
+
+  threeOrMoreWildcards: ->
+    pattern.split('?').length > 3
 
   expandPattern: (pattern) ->
     words = []
@@ -27,14 +36,12 @@ class @WordMaestro
     expand(pattern)
     @unique(words)
 
-
   unique: (list) ->
     return list if list.length < 2
     output = {}
     len = list.length
     output[list[key]] = list[key] for key in [0...len]
     value for key, value of output
-
 
   binarySearch: (items, value) ->
     value = value.toLowerCase()

@@ -11,7 +11,15 @@ describe 'WordMaestro', ->
     it 'should find a matching word with ö', ->
       expect(@wm.findWord('ödla')).toEqual ['ödla']
     it 'should find matching words by regexp', ->
-      expect(@wm.findWord('ele?anternas')).toEqual ['elefanternas', 'eleganternas']
+      expect(@wm.findWord('ele???ternas')).toEqual ['elefanternas', 'eleganternas']
+
+  describe 'grepWord', ->
+    it 'should find a matching word', ->
+      expect(@wm.grepWord('elefanternas')).toEqual ['elefanternas']
+    it 'should find a matching word with ö', ->
+      expect(@wm.grepWord('ödla')).toEqual ['ödla']
+    it 'should find matching words by regexp', ->
+      expect(@wm.grepWord('ele???ternas')).toEqual ['elefanternas', 'eleganternas']
 
   describe 'permuteWord', ->
     it 'should return [ab, ba] for ab', ->
