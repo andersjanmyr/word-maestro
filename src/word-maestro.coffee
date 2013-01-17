@@ -3,7 +3,7 @@ class @WordMaestro
     @alfavalues = (parseInt(c) for c in alfavalues)
 
   findWord: (pattern) ->
-    return @grepWord(pattern) if @threeOrMoreWildcards
+    return @grepWord(pattern) if @threeOrMoreWildcards(pattern)
     words = @expandPattern(pattern)
     found = (word for word in words when @binarySearch(@words, word) > 0)
     found
@@ -13,7 +13,7 @@ class @WordMaestro
     @words.filter (w) ->
       regex.test(w)
 
-  threeOrMoreWildcards: ->
+  threeOrMoreWildcards: (pattern) ->
     pattern.split('?').length > 3
 
   expandPattern: (pattern) ->
