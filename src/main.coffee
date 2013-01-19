@@ -1,6 +1,6 @@
 $ ->
 
-  worker = new Worker('lib/worker.js')
+  worker = new Worker(workerFile)
   worker.addEventListener('message', (e) ->
     showMatches(e.data.matchingWords)
     $.mobile.hidePageLoadingMsg())
