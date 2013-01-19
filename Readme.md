@@ -6,4 +6,4 @@ Mobile.
 
 ## Screenshot
 
-![Screenshot iPhone](./doc/images/screenshot-iphone)
+![Screenshot iPhone](https://raw.github.com/andersjanmyr/word-maestro/master/doc/images/screenshot-iphone.png)
