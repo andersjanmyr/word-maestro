@@ -124,6 +124,6 @@ class @WordMaestro
     for short in shorts
       words = words.concat(@findPermutedWord(short))
       if words.length > 10 then break
-    "#{w} (#{@calcWordValue(w)})" for w in @unique(words)
+    "#{w} (#{@calcWordValue(w)})" for w in @sort(@unique(words))
 
 
