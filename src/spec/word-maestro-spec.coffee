@@ -37,7 +37,7 @@ describe 'WordMaestro', ->
 
     it 'should return 18 words for ka?o', ->
       expect(@wm.findPermutedWord('ka?o').length).toBe 18
-    
+
   describe 'binarySearch', ->
     it 'should return a number for rederi', ->
       expect(@wm.binarySearch(WORDS, 'rederi')).toBeGreaterThan -1
@@ -50,22 +50,22 @@ describe 'WordMaestro', ->
       expect(@wm.expandPattern('?a?').length).toBe 27*27
 
   describe 'shortenWord', ->
-    it 'should return [ab, ba, a b] for ab', ->
+    it 'should return [ab, b a] for ab', ->
       expect(@wm.shortenWord('ab')).toEqual ['ab', 'b', 'a']
 
-    it 'should return an array with length 6 for abc', ->
+    it 'should return an array with length 7 for abc', ->
       expect(@wm.shortenWord('abc').length).toBe 7
 
   describe 'findPermutedAndShortendWord', ->
-    it 'should return [tax (10), ax (9), ta (2)] for xat', ->
+    it 'should return permutations for xat', ->
       expect(@wm.findPermutedAndShortendWord('xat')).toEqual ['tax (10)', 'ax (9)', 'ta (2)']
 
-  describe 'findPermutedAndShortendWordSlow', ->
-    it 'should return ten words  for andersek', ->
+  describe 'findPermutedAndShortendWordLong', ->
+    it 'should return ten (max) words for andersek', ->
       expect(@wm.findPermutedAndShortendWord('andersek').length).toEqual 10
 
   describe 'findPermutedAndShortendWordö', ->
-    it 'should return ten words  for ödla', ->
+    it 'should return permutations for ödla', ->
       expect(@wm.findPermutedAndShortendWord('ödla').length).toEqual 8
 
   describe 'calcWordValue', ->
