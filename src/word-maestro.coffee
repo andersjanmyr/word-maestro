@@ -1,6 +1,6 @@
 class @WordMaestro
   constructor: (@words, @alfabet, alfavalues) ->
-    @alfavalues = (parseInt(c) for c in alfavalues)
+    @alfavalues = (parseInt(c, 16) for c in alfavalues)
 
   findWord: (pattern) ->
     return @grepWord(pattern) if @threeOrMoreWildcards(pattern)

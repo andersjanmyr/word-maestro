@@ -71,4 +71,8 @@ describe 'WordMaestro', ->
   describe 'calcWordValue', ->
     it 'should return 12 for zoo', ->
       expect(@wm.calcWordValue('zoo')).toEqual 12
+    it 'should return 14 for woo', ->
+      wm = new WordMaestro([], 'wo', 'A2');
+      expect(wm.calcWordValue('woo')).toEqual 14
+
 
