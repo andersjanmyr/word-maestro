@@ -3,8 +3,14 @@ li.ui-li {
 }
 
 #pattern {
-    font-family: "Andale Mono" monospace;
-    font-weight: bold;
-    font-size: 18px;
+  font-family: "Andale Mono" monospace;
+  font-weight: bold;
+  font-size: 18px;
+}
+.ui-bar-a a.ui-link, .ui-bar-a a.ui-link:visited {
+  color: white;
+}
+.ui-header .ui-title {
+  font-size: 20px;
 }
 

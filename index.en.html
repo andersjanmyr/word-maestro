@@ -24,24 +24,24 @@
   <body class='ui-mobile-viewport'>
     <div id="search" data-role='page'>
       <div data-role="header">
-        <a href="index.en.html" data-ajax="false" class='ui-btn-left'>
-            <img src='images/swedish.png' alt='swedish'/>
+        <a href="index.html" data-ajax='false' "class='ui-btn-left'>
+            <img src='images/english.png' alt='english'/>
         </a>
         <h1>Word Maestro</h1>
         <a href="#info" class='ui-btn-right'>Info</a>
       </div>
       <div data-role="content">
         <div data-role="fieldcontain">
-          <label for="pattern"><strong>Bokstäver</strong>, ? är wildcard</label>
+          <label for="pattern"><strong>Letters</strong>, ? is wildcard</label>
           <input id="pattern" type='search' autofocus='autofocus'/>
-          <label for="scrambled">Blandade</label>
+          <label for="scrambled">Scrambled</label>
           <input id="scrambled" type='checkbox' checked='true'/>
         </div>
         <ol id='matching-words' data-role='listview' data-theme="g" >
         </ol>
       </div>
       <div data-role="footer">
-        <em>Word Maestro 1.0 av Anders Janmyr
+        <em>Word Maestro 1.1 by Anders Janmyr
             <a href='http://anders.janmyr.com/'>http://anders.janmyr.com</a>,
             <a href='https://twitter.com/andersjanmyr'>@andersjanmyr</a></em>
       </div>
@@ -49,38 +49,38 @@
     <div id="info" data-role='page'>
       <div data-role="header">
         <h1>Word Maestro</h1>
-        <a href="#search" data-direction="reverse">Tillbaka</a>
+        <a href="#search" data-direction="reverse">Back</a>
       </div>
       <div data-role="content">
         <p>
-          Word Maestro hjälper dig att att vinna i spel som Alfapet, Word-Feud, etc.
-          Det kan också hjälpa dig när du har kört fast med korsordet.
+          Word Maestro helps you win in games, such as Scrabble Word-Feud, etc.
+          It can also help you when you are stuck with your crossword.
         </p>
         <p>
-          Wildcard (?) gäller som vilken bokstav som helst.
+          Wildcard (?) counts as one single letter.
         </p>
         <p>
-          Word Maestro kan användas i två olika lägen, blandat och icke blandat.
-          Blandat är lämpligast att använda när man spelar Alfapetliknande spel
-          eftersom bokstäverna då blands och ger mycket fler alternativ.
+          Word Maestro has two modes, scrambled and not scrambled.
+          Scrambled is most suitable for Scrabble-like games since the
+          letters are scrambled (surprise:) and gives many more alternatives.
         </p>
         <p>
-          För att lösa korsord, där ordningen på bokstäverna har betydelse stänger
-          du bara av blandat och ordlistan kommer bara att söka efter ord som har
-          bokstäverna i den ordning du skrivit dem.
+          To solve crosswords, where the order of the letters matter, it is
+          better to turn scramble off and the word list will only be search
+          for words with letters ordered as you wrote them.
         </p>
         <p>
-            Rapportera buggar på
+            Please rapport bugs at:
             <a href='https://github.com/andersjanmyr/word-maestro/issues'>Gihub Issues</a>.
         </p>
       </div>
       <div data-role="footer">
-        <em>Word Maestro 1.0 av Anders Janmyr
+        <em>Word Maestro 1.1 by Anders Janmyr
             <a href='http://anders.janmyr.com/'>http://anders.janmyr.com</a>,
             <a href='https://twitter.com/andersjanmyr'>@andersjanmyr</a></em>
       </div>
     </div>
-    <script>var workerFile = 'lib/worker.js';</script>
+    <script>var workerFile = 'lib/worker.en.js';</script>
     <script src="lib/main.js" charset='utf-8'></script>
   </body>
 </html>
