@@ -13,6 +13,9 @@ li.ui-li {
 .ui-header .ui-title {
   font-size: 20px;
 }
+ol.ui-listview {
+  min-height: 50px;
+}
 
 @media only screen
 and (max-width : 320px) {
