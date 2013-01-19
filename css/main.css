@@ -14,3 +14,10 @@ li.ui-li {
   font-size: 20px;
 }
 
+@media only screen
+and (max-width : 320px) {
+  .ui-header .ui-title {
+    font-size: 18px;
+  }
+}
+
