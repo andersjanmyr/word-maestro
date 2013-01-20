@@ -74,6 +74,7 @@ class @WordMaestro
       return if word is ''
       chars = word.split('')
       len = chars.length
+
       for i in [0...len]
         ch = chars.splice(i, 1)[0]
         usedChars.push(ch)
@@ -123,7 +124,7 @@ class @WordMaestro
     words = []
     for short in shorts
       words = words.concat(@findPermutedWord(short))
-      if words.length > 10 then break
+      break if words.length > 10
     "#{w} (#{@calcWordValue(w)})" for w in @sort(@unique(words))
 
 
