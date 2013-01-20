@@ -1,11 +1,7 @@
 
-@addMessageHandler = (context, wm) ->
+@addMessageHandler = (context, delegate) ->
   messageHandler = (e) ->
-    matchingWords = []
-    if e.data.cmd is 'findPermutedAndShortendWord'
-      matchingWords = wm.findPermutedAndShortendWord e.data.pattern
-    else
-      matchingWords = wm.findWord e.data.pattern
+    matchingWords = delegate[e.data.cmd](e.data.pattern)
     context.postMessage({ matchingWords: matchingWords})
 
   context.addEventListener('message', messageHandler)
