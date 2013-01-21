@@ -24,3 +24,46 @@ and (max-width : 320px) {
   }
 }
 
+.unsupported-browser {
+  background: darkred;
+}
+
+.content {
+  margin: 20px auto;
+  padding: 20px 0;
+  width: 800px;
+  background: white;
+  border-radius: 20px;
+}
+
+.content > img {
+  margin-left: 250px;
+  width: 300px;
+}
+
+.content h1, .content h2 {
+  font-family: impact;
+  text-align: center;
+  margin: 0;
+}
+
+.content p {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Verdana Geneval sans-serif;
+  text-align: center;
+}
+
+.content li {
+  float: left;
+  margin-left: 25px;
+  list-style: none;
+}
+
+.content li img {
+  width: 150px;
+}
+
+br {
+  clear: both;
+}
