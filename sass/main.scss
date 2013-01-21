@@ -1,0 +1,85 @@
+$textfield-font: 18px bold "Andale Mono" monospace;
+$header-link-color: white;
+$header-font-size: 20px;
+$iphone-header-font-size: 18px;
+
+li.ui-li {
+  font-size: large;
+}
+
+#pattern {
+  font: $textfield-font;
+}
+
+.ui-bar-a a.ui-link, .ui-bar-a a.ui-link:visited {
+  color: $header-link-color;
+}
+
+.ui-header .ui-title {
+  font-size: $header-font-size;
+}
+
+ol.ui-listview {
+  min-height: 50px;
+}
+
+@media only screen
+and (max-width : 320px) {
+  .ui-header .ui-title {
+    font-size: $iphone-header-font-size;
+  }
+}
+
+
+$content-width: 800px;
+$image-width: 300px;
+$image-margin: ($content-width - $image-width)/2;
+$outer-background: darkred;
+$inner-background: white;
+$heading-font: impact;
+$paragraph-font: 16px bold Verdana Geneva sans-serif;
+
+.unsupported-browser {
+  background: $outer-background;
+}
+
+
+.content {
+  margin: 20px auto;
+  padding: 20px 0;
+  width: $content-width;
+  background: $inner-background;
+  border-radius: 20px;
+
+
+  & > img {
+    width: $image-width;
+    margin-left: $image-margin;
+  }
+
+  h1, h2 {
+    font-family: $heading-font;
+    text-align: center;
+    margin: 0;
+  }
+
+  p {
+    font: $paragraph-font;
+    text-align: center;
+  }
+
+  li {
+    float: left;
+    margin-left: 25px;
+    list-style: none;
+
+    img {
+      height: 150px;
+      width: 150px;
+    }
+  }
+}
+
+br {
+  clear: both;
+}

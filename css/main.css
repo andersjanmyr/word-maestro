@@ -1,69 +1,47 @@
 li.ui-li {
-  font-size: large;
-}
+  font-size: large; }
 
 #pattern {
-  font-family: "Andale Mono" monospace;
-  font-weight: bold;
-  font-size: 18px;
-}
+  font: 18px bold "Andale Mono" monospace; }
+
 .ui-bar-a a.ui-link, .ui-bar-a a.ui-link:visited {
-  color: white;
-}
+  color: white; }
+
 .ui-header .ui-title {
-  font-size: 20px;
-}
+  font-size: 20px; }
+
 ol.ui-listview {
-  min-height: 50px;
-}
+  min-height: 50px; }
 
-@media only screen
-and (max-width : 320px) {
+@media only screen and (max-width: 320px) {
   .ui-header .ui-title {
-    font-size: 18px;
-  }
-}
-
+    font-size: 18px; } }
 .unsupported-browser {
-  background: darkred;
-}
+  background: darkred; }
 
 .content {
   margin: 20px auto;
   padding: 20px 0;
   width: 800px;
   background: white;
-  border-radius: 20px;
-}
-
-.content > img {
-  margin-left: 250px;
-  width: 300px;
-}
-
-.content h1, .content h2 {
-  font-family: impact;
-  text-align: center;
-  margin: 0;
-}
-
-.content p {
-  font-size: 16px;
-  font-weight: bold;
-  font-family: Verdana Geneval sans-serif;
-  text-align: center;
-}
-
-.content li {
-  float: left;
-  margin-left: 25px;
-  list-style: none;
-}
-
-.content li img {
-  width: 150px;
-}
+  border-radius: 20px; }
+  .content > img {
+    width: 300px;
+    margin-left: 250px; }
+  .content h1, .content h2 {
+    font-family: impact;
+    text-align: center;
+    margin: 0; }
+  .content p {
+    font: 16px bold Verdana Geneva sans-serif;
+    text-align: center; }
+  .content li {
+    float: left;
+    margin-left: 25px;
+    list-style: none; }
+    .content li img {
+      height: 150px;
+      width: 150px; }
 
 br {
-  clear: both;
-}
+  clear: both; }
