@@ -10,7 +10,7 @@ deploy:
 
 compile:
 	coffee -c -o lib/ src/
-	sass sass:css
+	sass --update sass:css
 
 watch-coffee:
 	coffee -wc -o lib/ src/
