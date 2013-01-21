@@ -39,9 +39,6 @@ ol.ui-listview {
     float: left;
     margin-left: 25px;
     list-style: none; }
-    .content li img {
-      height: 150px;
-      width: 150px; }
 
 br {
   clear: both; }

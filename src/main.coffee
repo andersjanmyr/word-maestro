@@ -1,7 +1,4 @@
-worker = new Worker(@workerFile)
-worker.addEventListener('message', (e) ->
-  showMatches(e.data.matchingWords)
-  $.mobile.hidePageLoadingMsg())
+worker = null
 
 search = ->
   pattern = $('#pattern').val().toLowerCase()
@@ -36,6 +33,11 @@ workersSupported = ->
 $ ->
 
   window.location = './unsupported-browser.html' unless workersSupported()
+
+  worker = new Worker(window.workerFile)
+  worker.addEventListener('message', (e) ->
+    showMatches(e.data.matchingWords)
+    $.mobile.hidePageLoadingMsg())
 
   # Main
   $('#pattern').change search
