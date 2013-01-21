@@ -27,10 +27,15 @@ postMessage = (cmd, pattern) ->
   $.mobile.showPageLoadingMsg()
   worker.postMessage({ cmd: cmd, pattern:  pattern })
 
+workersSupported = ->
+  window.Worker
+
 # Test
 @mainTest = { capitalize: capitalize }
 
 $ ->
+
+  window.location = './unsupported-browser.html' unless workersSupported()
 
   # Main
   $('#pattern').change search
