@@ -6,6 +6,7 @@ default:
 	@echo "watch-sass: 	Watch sass"
 
 deploy:
+	bin/update-appcache.sh
 	git push origin master:gh-pages
 
 compile:
