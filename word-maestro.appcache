@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# DATE 20130929_164029
+# DATE 20130929_172253
 
 CACHE:
 index.html
@@ -12,6 +12,8 @@ css/images/icons-18-black.png
 css/images/icons-18-white.png
 css/images/icons-36-black.png
 css/images/icons-36-white.png
+data/english-word-list.js
+data/swedish-word-list.js
 lib/jquery-1.10.2.min.js
 lib/jquery.mobile-1.3.2.min.js
 lib/main.js
