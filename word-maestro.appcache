@@ -1,0 +1,25 @@
+CACHE MANIFEST
+# DATE
+
+CACHE:
+index.html
+index.en.html
+css/main.css
+css/jquery.mobile-1.0b3.min.css
+css/images/ajax-loader.png
+css/images/icon-search-black.png
+css/images/icons-18-black.png
+css/images/icons-18-white.png
+css/images/icons-36-black.png
+css/images/icons-36-white.png
+lib/jquery-1.6.4.min.js
+lib/jquery.mobile-1.0b3.min.js
+lib/main.js
+lib/messageHandler.js
+lib/word-maestro.js
+lib/worker.en.js
+lib/worker.js
+
+NETWORK:
+
+FALLBACK:
