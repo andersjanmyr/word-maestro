@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# DATE 20130929_172638
+# DATE 20130929_172903
 
 CACHE:
 index.html
@@ -25,10 +25,6 @@ lib/worker.en.js
 lib/worker.js
 
 NETWORK:
-unsupported-browser.html
-images/Chrome.png
-images/Firefox.png
-images/Safari.png
-images/boss2.png
+*
 
 FALLBACK:
