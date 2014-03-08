@@ -1,0 +1,17 @@
+{
+  "name": "Word Maestro",
+  "description": "Word Maestro is an application that finds words from patterns or combinations of letters.",
+  "launch_path": "/word-maestro",
+  "icons": {
+    "128": "/word-maestro/images/logo128.png",
+    "64": "/word-maestro/images/logo64.png",
+    "32": "/word-maestro/images/logo32.png"
+  },
+  "developer": {
+    "name": "Anders Janmyr",
+    "url": "http://anders.janmyr.com"
+  },
+  "default_locale": "sv"
+}
+
+
