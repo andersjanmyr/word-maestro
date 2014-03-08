@@ -4,6 +4,7 @@
   "description": "Word Maestro is an application that finds words from patterns or combinations of letters.",
   "launch_path": "/word-maestro",
   "icons": {
+    "256": "/word-maestro/images/logo256.png",
     "128": "/word-maestro/images/logo128.png",
     "120": "/word-maestro/images/logo120.png",
     "90": "/word-maestro/images/logo90.png",
