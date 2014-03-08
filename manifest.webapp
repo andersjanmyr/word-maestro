@@ -5,6 +5,7 @@
   "launch_path": "/word-maestro",
   "icons": {
     "128": "/word-maestro/images/logo128.png",
+    "90": "/word-maestro/images/logo90.png",
     "60": "/word-maestro/images/logo60.png",
     "32": "/word-maestro/images/logo32.png"
   },
